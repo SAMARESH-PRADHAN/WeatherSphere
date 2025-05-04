@@ -79,20 +79,57 @@
 
 ---
 
+## 🚀 Getting Started
+
+Follow these steps to set up and run the WeatherSphere project locally:
+
+### 🔹 1. Clone the Repository
+
+```bash
+git clone https://github.com/SAMARESH-PRADHAN/WeatherSphere.git
+cd WeatherSphere
+```
+
+###🔹 2. Create a Virtual Environment
+
+python -m venv venv
+venv\Scripts\activate # On Windows
+
+# OR
+
+source venv/bin/activate # On macOS/Linux
+
+###🔹 3. Install Dependencies
+
+pip install -r requirements.txt
+
+###🔹 4. Set Up the .env File
+Create a .env file in the root folder and add your database and secret config:
+
+DB_HOST=localhost
+DB_USER=your_db_username
+DB_PASSWORD=your_db_password
+DB_NAME=your_database_name
+SECRET_KEY=your_secret_key
+✅ Note: Make sure .env is listed in your .gitignore file to prevent it from being pushed to GitHub.
+
+###🔹 5. Run the Application
+
+flask run
+The app will run at: http://127.0.0.1:5000
+
+---
+
 ## 👤 Author
 
-- **Samaresh Pradhan**  
+- **Samaresh Pradhan**
   GitHub: [@SAMARESH-PRADHAN](https://github.com/SAMARESH-PRADHAN)
 
 ---
 
 ## 📬 Contact
 
-📧 Email: pradhansamaresh2002@gmail.com  
+📧 Email: pradhansamaresh2002@gmail.com
 📱 Mobile: +91-7978961272
 
 ---
-
-## 📝 License
-
-This project is open-source and free to use under the [MIT License](LICENSE).
