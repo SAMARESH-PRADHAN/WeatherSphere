@@ -64,7 +64,7 @@
 
 ### 👥 User Management
 
-![User Management](Screenshot/dashbord.png)
+![User Management](Screenshot/usermanagement.png)
 
 ### 🔔 Notifications (Feedback & Contact)
 
