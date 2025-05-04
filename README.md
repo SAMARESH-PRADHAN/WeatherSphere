@@ -92,31 +92,44 @@ cd WeatherSphere
 
 ###🔹 2. Create a Virtual Environment
 
+```bash
 python -m venv venv
 venv\Scripts\activate # On Windows
+```
 
 # OR
 
+```bash
 source venv/bin/activate # On macOS/Linux
+```
 
 ###🔹 3. Install Dependencies
 
+```bash
 pip install -r requirements.txt
+```
 
 ###🔹 4. Set Up the .env File
-Create a .env file in the root folder and add your database and secret config:
 
+```bash
+Create a .env file in the root folder and add your database and secret config:
+```
+
+```ini
 DB_HOST=localhost
 DB_USER=your_db_username
 DB_PASSWORD=your_db_password
 DB_NAME=your_database_name
 SECRET_KEY=your_secret_key
 ✅ Note: Make sure .env is listed in your .gitignore file to prevent it from being pushed to GitHub.
+```
 
 ###🔹 5. Run the Application
 
+```bash
 flask run
 The app will run at: http://127.0.0.1:5000
+```
 
 ---
 
