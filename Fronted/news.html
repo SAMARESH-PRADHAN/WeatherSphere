@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather News</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <script src="./assets/js/jquery-3.7.1.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/index.css">
+
+  <style>
+    html {
+      background-color: #fff;
+      color: #1e202b;
+    }
+
+    body {
+      background: #000;
+    }
+
+    .main-div {
+      margin-top: 60px;
+    }
+
+    .main-h2 {
+      padding-top: 50px;
+
+    }
+
+    .main-con {
+      align-items: center;
+      text-align: center;
+    }
+
+    .card-content h3 {
+      color: white;
+    }
+
+    .card-content h6 {
+      color: white;
+    }
+
+    .card-content p {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <header id="header"></header>
+
+
+
+
+  <main class="main-content pt-div">
+    <div class="fullwidth-block main-div">
+      <div class="container main-con">
+        <h2 class="main-h2">Weather News</h2>
+        <p class="section-subtext">
+          🌦️ Dive into breaking weather stories, dramatic skies, and Earth’s wild moods.
+          It’s more than a forecast — it’s climate in motion, one headline at a time.<br>
+          Stay updated. Stay weather-wise.
+        </p>
+
+        <div class="cards-container container flex" id="cards-container">
+        </div>
+        <template id="template-news-card">
+          <div class="card">
+            <div class="card-header">
+              <img src="#" alt="newsimg" id="news-img">
+            </div>
+            <div class="card-content">
+              <h3 id="news-title"></h3>
+              <h6 class="news-source" id="news-source"></h6>
+              <p class="news-desc" id="news-desc"></p>
+            </div>
+          </div>
+        </template>
+
+        <!-- Bootstrap Pagination -->
+        <nav aria-label="Page navigation example">
+          <ul class="pagination" id="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous" onclick="prevPage()">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#" onclick="changePage(1)">1</a></li>
+            <li class="page-item"><a class="page-link" href="#" onclick="changePage(2)">2</a></li>
+            <li class="page-item"><a class="page-link" href="#" onclick="changePage(3)">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next" onclick="nextPage()">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script src="./assets/js/jquery-3.7.1.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/news.js"></script>
+</body>
+
+</html>

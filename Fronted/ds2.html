@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stylish Footer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #0e0e1f;
+      color: #fff;
+    }
+
+    .site-footer {
+      position: relative;
+      z-index: 1;
+      padding: 60px 20px 30px;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.05);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .site-footer::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('https://i.imgur.com/M9E5eLp.png') repeat;
+      opacity: 0.05;
+      animation: moveStars 60s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes moveStars {
+      0% { background-position: 0 0; }
+      100% { background-position: 1000px 1000px; }
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+    }
+
+    .foot h3 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: #ffcc00;
+      text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00;
+      position: relative;
+    }
+
+    .foot p {
+      font-style: italic;
+      margin: 10px 0;
+      color: #ccc;
+      animation: fadeInUp 2s ease;
+    }
+
+    .social-links a {
+      font-size: 1.7rem;
+      margin: 0 12px;
+      color: #bbb;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+      transform: scale(1.2);
+    }
+
+    .colophon {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #888;
+      animation: fadeIn 2s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Make footer sticky at bottom */
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Other Page Content -->
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="foot">
+        <h3>WeatherSphere</h3>
+        <p>A complete weather intelligence hub.</p>
+      </div>
+      <div class="social-links">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <p class="colophon">© 2025 Samaresh Pradhan. All rights reserved.</p>
+  </footer>
+</body>
+</html>

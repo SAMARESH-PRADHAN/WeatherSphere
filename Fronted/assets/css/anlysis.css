@@ -1,0 +1,362 @@
+
+ 
+ /*
+  * Global Styles
+  */
+ html {
+   font-size: 14px; }
+ 
+ body {
+   color: #bfc1c8;
+   font-family: "Roboto", "Open Sans", sans-serif;
+   font-size: 14px;
+   font-weight: 300;
+   line-height: 1.5;
+   background: #1e202b;
+   min-height: 100vh;
+   }
+ 
+ h1, h2, h3, h4, h5, h6 {
+   font-weight: 700;
+   margin: 0 0 20px;
+   line-height: normal; 
+
+  }
+ h2{
+  font-size: 30px;
+ }
+ hr {
+   border: none;
+   border-bottom: 1px solid #777; }
+ 
+ ul, ol {
+   margin: 0;
+   padding-left: 0; }
+ 
+ a {
+   text-decoration: none;
+   color: #009ad8; }
+ 
+ address {
+   font-style: normal; }
+ 
+ p {
+   margin-top: 0; }
+ 
+ form input, form textarea, form select {
+   outline: none;
+   border: none;
+   padding: 10px;
+   border-radius: 30px; }
+ form select {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none; }
+ form textarea {
+   resize: vertical; }
+ 
+
+/*
+  * Reusable Components Style
+  */
+  .heading-w{
+    padding-top: 100px;
+  }
+  /* Panel Styling */
+  .panel {
+    /* background: rgba(40, 44, 52, 0.95);*/
+    padding: 20px; 
+    border-radius: 10px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); */
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 100px;
+
+  }
+  .panel h3{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* City Selection */
+  .city-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 50px;
+  }
+  .city-group input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  /* Custom Dropdown Styling */
+  .scrollable-dropdown {
+    max-height: 250px;
+    overflow-y: auto;
+    /* Enable scrolling */
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+  /* Custom Scrollbar for Better Look */
+  .scrollable-dropdown::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .scrollable-dropdown::-webkit-scrollbar-thumb {
+    background: #007bff;
+    border-radius: 10px;
+  }
+
+  .scrollable-dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  #selectedDistricts{
+    width: 400px;
+  }
+  /* Smooth Open & Close Animation */
+  .dropdown-menu li {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+  }
+
+  .dropdown-menu input[type="checkbox"] {
+    margin-right: 8px;
+  }
+  
+  /* Styled Select Dropdown */
+  .styled-select {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* Styled Input Fields */
+  .styled-input {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 5px;
+    transition: 0.3s;
+  }
+  
+  /* Buttons */
+  .styled-button {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 5px;
+  }
+  .styled-button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #764ba2, #667eea);
+  }
+  
+  /* Chart Container */
+  .chart-container {
+    display: none;
+    position: relative;
+    background: rgba(40, 44, 52, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+  }
+  
+  #weatherChart {
+    background: #282c34;
+    border-radius: 10px;
+    width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Close Button */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 1001; /* Ensure it's above other elements */
+  }
+  
+  .close-btn i {
+    font-size: 22px;
+    color: red;
+  }
+  
+  .close-btn:hover {
+    transform: scale(1.2);
+    color: red;
+  }
+  
+  
+
+  #chartLoader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .spinner {
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .analysis-main{
+    margin-bottom: 50px;
+  }
+  .ftter{
+    
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  
+  }
+  .dropdown-item{
+    color: white;
+  }
+  .analysis-subtext {
+    font-size: 1.1rem;
+    color: #f1f1f1;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  /* Tablets (768px to 1024px) */
+@media (max-width: 1024px) {
+  .panel {
+    margin-left: 0;
+    width: 100%;
+    padding: 15px;
+  }
+
+  #selectedDistricts {
+    width: 100%;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .city-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .chart-container {
+    width: 100%;
+  }
+
+  .styled-input,
+  .styled-select,
+  .styled-button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* Mobile (up to 767px) */
+@media (max-width: 767px) {
+  .main-con {
+    padding: 10px;
+  }
+
+  .heading-w {
+    padding-top: 70px;
+    font-size: 24px;
+  }
+
+  .panel h3 {
+    font-size: 18px;
+  }
+
+  #selectedDistricts {
+    width: 100%;
+  }
+
+  .city-group {
+    font-size: 16px;
+  }
+
+  .dropdown-menu {
+    width: 100%;
+  }
+
+  .styled-button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .styled-input,
+  .styled-select {
+    font-size: 14px;
+  }
+
+  .chart-container {
+    padding: 10px;
+    max-height: 400px;
+  }
+
+  #weatherChart {
+    width: 100% !important;
+    max-height: 200px;
+  }
+#bbbbbb{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+  .close-btn {
+    top: 5px;
+    right: 5px;
+    font-size: 18px;
+  }
+}

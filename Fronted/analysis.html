@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <script src="./assets/js/jquery-3.7.1.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="./assets/css/anlysis.css">
+
+</head>
+
+<body>
+  <header id="header"></header>
+
+
+  <main class="main-content pt-div analysis-main">
+    <div class="fullwidth-block main-div">
+      <div class="container main-con ">
+        <h2 class="text-center heading-w">Weather Data Analysis</h2>
+        <p class="analysis-subtext text-center mt-2">
+          📊 Visualize nature’s rhythm — from monsoon showers to sun-baked days.
+          Unlock weather stories hidden in the curves of every chart and graph.<br>
+          <span class="text-secondary">Compare trends, plan ahead, and make smarter weather-informed decisions!</span>
+        </p>
+
+
+
+        <div id="controls" class="panel">
+          <h3>Select Cities</h3>
+          <div class="city-group">
+
+            <div class="dropdown" id="districtDropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" id="districtDropdownButton"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Select Districts
+              </button>
+              <ul class="dropdown-menu scrollable-dropdown" aria-labelledby="districtDropdownButton" id="districtList">
+                <!-- Dynamic Districts will be added here -->
+              </ul>
+            </div>
+            <input type="text" id="selectedDistricts" class="form-control mt-2" readonly
+              placeholder="Selected Districts">
+          </div>
+
+          <h3>Select Date Range</h3>
+          <select id="datePreset" onchange="setDateRange()" class="styled-select">
+            <option value="">Custom</option>
+            <option value="30">Last 1 Month</option>
+            <option value="90">Last 3 Months</option>
+            <option value="180">Last 6 Months</option>
+            <option value="365">Last 1 Year</option>
+          </select>
+
+          <input type="date" id="start_date" class="styled-input">
+          <input type="date" id="end_date" class="styled-input">
+
+          <div class="btn-group">
+            <button onclick="showChart('rainfall')" class="styled-button">Get Rainfall Data</button>
+            <button onclick="showChart('temperature')" class="styled-button">Get Temperature Data</button>
+          </div>
+        </div>
+        <div id="chartLoader" style="display: none; text-align: center; padding: 20px; color: white;">
+          <div class="spinner"></div>
+          <p>Loading Chart...</p>
+        </div>
+        <div id="chartContainer" class="chart-container">
+          <button class="close-btn" onclick="closeChart()"><i class="bi bi-x-circle"></i></button>
+          <h3 id="chartTitle">Weather Data</h3>
+          <div id="bbbbbb">
+            <button onclick="toggleFullScreen()" class="styled-button"><i class="bi bi-fullscreen"></i></button>
+            <button onclick="downloadCSV()" class="styled-button"><i
+                class="bi bi-file-earmark-arrow-down"></i>CSV</button>
+            <button onclick="downloadChart()" class="styled-button"><i class="bi bi-download"></i></button>
+          </div>
+          <canvas id="weatherChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+  <footer id="footer" class="ftter"></footer>
+
+  <!-- <script src="./assets/js/jquery-3.7.1.min.js"></script> -->
+
+  <script src="./assets/js/analysis.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index</title>
+
+  <script src="./assets/js/jquery-3.7.1.min.js"></script>
+
+  <!-- Font Awesome CDN Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <link rel="stylesheet" href="assets/css/index.css">
+</head>
+
+
+<body>
+  <header id="header"></header>
+
+
+
+  <div class="hero" style="background-image: url('assets/img/hero-bg.jpg')">
+    <div class="container">
+      <form action="#" class="find-location">
+        <input type="text" placeholder="Find your location..." id="search-input">
+        <!-- <input type="submit" value="Find" id="search-btn"> -->
+        <button id="search-btn">Find</button>
+      </form>
+
+    </div>
+  </div>
+
+  <div class="parent-forecast">
+    <div class="left-forecast">
+      <div class="forecast-h">
+        <div class="day" id="day"></div>
+        <div class="date" id="date"></div>
+      </div>
+      <div class="location"> </div>
+      <div class="degree">
+        <div class="forecast-icon">
+          <img src="assets/img/clear.png" alt="" id="weather-icon">
+        </div>
+        <div class="temp-div">
+          <div class="low-temp"><i class="fa-solid fa-arrow-down"></i>
+            <p class="low-temp-p"></p>
+          </div>
+          <div class="temp num"></div>
+          <div class="high-temp"><i class="fa-solid fa-arrow-up"></i>
+            <p class="high-temp-p"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-forecast">
+      <div class="column">
+        <div class="humidity-part">
+          <h3>Humidity</h3>
+          <div class="icon">
+            <img src="assets/img/icons/humidity.png" class="humidity-logo">
+            <p class="humidity"></p>
+          </div>
+        </div>
+        <div class="air-part">
+          <h3>Wind</h3>
+          <div class="icon">
+            <img src="assets/img/icons/wind.png" alt="" class="wind-logo">
+            <p class="wind"></p>
+          </div>
+        </div>
+      </div>
+      <div class="column ">
+        <div class="humidity-partt">
+          <h3>Sunrise & Sunset</h3>
+          <div class="sunrise-sunset">
+            <div class="icon">
+              <img src="assets/img/icons/sunrise.png" class="icon-img">
+              <p class="sr"></p>
+            </div>
+            <div class="icon">
+              <img src="assets/img/icons/sunset.png">
+              <p class="st"></p>
+            </div>
+          </div>
+        </div>
+        <div class="air-part">
+          <h3>Description</h3>
+          <div class="icon">
+            <span class="desc"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <main class="main-content">
+    <div class="fullwidth-block">
+      <div class="container">
+        <div class="forecast-parent-div">
+          <h2 class="city-head">5 Days Forecasting</h2>
+          <p class="section-subtext">
+            🌤 Get a 5-day glance into the skies ahead — <span class="highlight">plan smarter, live brighter!</span><br>
+            Your personal sky guide, tailored for every day and every mood.
+          </p>
+
+          <div class="cast-row">
+            <!-- <div class="for-con">
+            <h3>Tuesday</h3>
+            <div class="fore-img"> <img src="assets/img/clouds.png" alt=""></div>
+            <div>23<sup>o</sup>C</div>
+            <p>clear</p>
+          </div>-->
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fullwidth-block" data-bg-color="#262936">
+      <div class="container">
+        <div class="city-parent-div">
+          <h2 class="city-head">India's Top cities current Weather</h2>
+          <p class="section-subtext">
+            🏙️ From Delhi to Goa — see what’s happening in your favorite cities at a glance.<br>
+            Stay ahead of the skies with live updates from across India.
+          </p>
+
+          <div class="city-div">
+            <div class="city-row 1">
+              <div class="city-solo-div">
+                <h4 class="city-name">Bhubaneswar</h4>
+                <div class="flex gap-8 item-center">
+                  <img src="assets/img/icons/icon-1.svg" alt="" class="city-img-wd">
+                  <p class="class-temp">23<sup>o</sup>C</p>
+                </div>
+              </div>
+              <div class="city-solo-div">
+                <h4 class="city-name">Delhi</h4>
+                <div class="flex gap-8 item-center">
+                  <img src="assets/img/icons/icon-1.svg" alt="" class="city-img-wd">
+                  <p class="class-temp">23<sup>o</sup>C</p>
+                </div>
+              </div>
+              <div class="city-solo-div">
+                <h4 class="city-name">Mumbai</h4>
+                <div class="flex gap-8 item-center">
+                  <img src="assets/img/icons/icon-1.svg" alt="" class="city-img-wd">
+                  <p class="class-temp">23<sup>o</sup>C</p>
+                </div>
+              </div>
+            </div>
+            <div class="city-row 1">
+              <div class="city-solo-div">
+                <h4 class="city-name">Kolkata</h4>
+                <div class="flex gap-8 item-center">
+                  <img src="assets/img/icons/icon-1.svg" alt="" class="city-img-wd">
+                  <p class="class-temp">23<sup>o</sup>C</p>
+                </div>
+              </div>
+              <div class="city-solo-div">
+                <h4 class="city-name">Bengaluru</h4>
+                <div class="flex gap-8 item-center">
+                  <img src="assets/img/icons/icon-1.svg" alt="" class="city-img-wd">
+                  <p class="class-temp">23<sup>o</sup>C</p>
+                </div>
+              </div>
+              <div class="city-solo-div">
+                <h4 class="city-name">Goa</h4>
+                <div class="flex gap-8 item-center">
+                  <img src="assets/img/icons/icon-1.svg" alt="" class="city-img-wd">
+                  <p class="class-temp">23<sup>o</sup>C</p>
+                </div>
+              </div>
+            </div>
+            <div class="city-row 3">
+              <div class="city-solo-div">
+                <h4 class="city-name">Hyderabad</h4>
+                <div class="flex gap-8 item-center">
+                  <img src="assets/img/icons/icon-1.svg" alt="" class="city-img-wd">
+                  <p class="class-temp">23<sup>o</sup>C</p>
+                </div>
+              </div>
+              <div class="city-solo-div">
+                <h4 class="city-name">Ahmedabad</h4>
+                <div class="flex gap-8 item-center">
+                  <img src="assets/img/icons/icon-1.svg" alt="" class="city-img-wd">
+                  <p class="class-temp">23<sup>o</sup>C</p>
+                </div>
+              </div>
+              <div class="city-solo-div">
+                <h4 class="city-name">Jammu</h4>
+                <div class="flex gap-8 item-center">
+                  <img src="assets/img/icons/icon-1.svg" alt="" class="city-img-wd">
+                  <p class="class-temp">23<sup>o</sup>C</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    </div>
+
+    <div class="fullwidth-block">
+      <div class="container">
+        <div class="city-parent-div">
+          <h2 class="city-head">Weather News</h2>
+
+          <p class="section-subtext">
+            📰 Catch the latest climate headlines and nature's big moments around the world.<br>
+            Because weather isn’t just a forecast — it’s a story unfolding.
+          </p>
+
+          <div class="cards-container container flex" id="cards-container">
+
+          </div>
+          <template id="template-news-card">
+            <div class="card">
+              <div class="card-header">
+                <img src="https://via.placeholder.com/400x200" alt="newsimg" id="news-img">
+              </div>
+              <div class="card-content">
+                <h3 id="news-title">This is the tittle</h3>
+                <h6 class="news-source" id="news-source">End gadget 26/08/2023</h6>
+                <p class="news-desc" id="news-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil
+                  cupiditate reprehenderit necessitatibus ex quidem? Quas quaerat ut accusamus consequatur culpa?</p>
+              </div>
+            </div>
+          </template>
+
+
+        </div>
+      </div>
+    </div>
+  </main> <!-- .main-content -->
+
+
+  <footer id="footer"></footer>
+
+
+
+  <script src="./assets/js/jquery-3.7.1.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="assets/js/index.js"></script>
+</body>
+
+</html>

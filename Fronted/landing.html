@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>WeatherSphere</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <script src="./assets/js/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Favicons -->
+  <link href="assets/img/llllllll.png" rel="icon" />
+  <link href="assets/img/llllllll.png" rel="apple-touch-icon" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet" />
+</head>
+
+<body class="index-page">
+  <div class="containerbody">
+    <!-- <header id="landheader"></header> -->
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+        <a href="landing.html" class="logo d-flex align-items-center">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <img src="assets/img/llllllll.png" alt="WEATHER" class="logoo">
+          <!-- <h1 class="sitename"></h1> -->
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="#hero" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+              <a href="#" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" id="loginBtn">Login</a>
+            </li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- Hero Section -->
+      <section id="hero" class="hero section accent-background">
+        <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" />
+
+        <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
+          <h2>Stay Informed with Real-Time Weather Insights</h2>
+          <p>
+            Explore accurate forecasts, interactive map views, and decade-long
+            weather analysis presented in beautiful graphs.
+          </p>
+          <a href="#about" class="btn-scroll" title="Scroll Down"><i class="bi bi-chevron-down"></i></a>
+        </div>
+      </section>
+      <!-- /Hero Section -->
+
+      <!-- About Section -->
+      <section id="about" class="about section">
+        <div class="container">
+          <h2 id="aboutHeading">About</h2>
+          <div class="row gy-5 align-items-center">
+            <div class="col-xl-6" data-aos="fade-up" data-aos-delay="100">
+              <img src="assets/img/weather-data-analytics.webp" alt="Weather Analysis" class="img-fluid rounded shadow"
+                id="aboutImg" />
+            </div>
+
+            <div class="content col-xl-6 d-flex flex-column" data-aos="fade-up" data-aos-delay="200">
+              <h2>Empowering Weather Intelligence</h2>
+              <p>
+                At Weather World, we are dedicated to providing you with
+                accurate and timely weather information. With innovative
+                technologies and advanced analytics, our platform empowers you
+                to stay informed and make smarter decisions based on reliable
+                weather insights.
+              </p>
+              <p>
+                Whether you're a weather enthusiast, a researcher, or simply
+                someone planning their day, we offer a range of features
+                tailored to your needs.
+              </p>
+
+              <ul class="list-unstyled">
+                <li>
+                  <i class="bi bi-check-circle-fill text-success"></i>
+                  Real-time weather updates across various locations.
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill text-success"></i>
+                  Five-day weather forecasts for better planning.
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill text-success"></i>
+                  Interactive map views with detailed weather patterns.
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill text-success"></i>
+                  Historical weather data analytics spanning the past decade.
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill text-success"></i> Latest
+                  weather news and updates to keep you informed.
+                </li>
+              </ul>
+
+              <p>
+                Our mission is simple: to provide comprehensive weather
+                insights for your everyday life and research needs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- /About Section -->
+
+      <!-- Services Section -->
+      <!-- Services Section -->
+      <section id="services" class="services section">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Our Services</h2>
+          <p>
+            Explore our comprehensive suite of weather-related services
+            designed for everyone, from everyday users to data analysts and
+            researchers.
+          </p>
+        </div>
+
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-item position-relative">
+                <div class="icon"><i class="bi bi-cloud-sun"></i></div>
+                <h4>
+                  <a href="" class="stretched-link">Real-Time Weather Updates</a>
+                </h4>
+                <p>
+                  Get current weather conditions, temperature, humidity, and
+                  wind speed for any location.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+              <div class="service-item position-relative">
+                <div class="icon"><i class="bi bi-cloud-arrow-up"></i></div>
+                <h4>
+                  <a href="" class="stretched-link">5-Day Weather Forecasts</a>
+                </h4>
+                <p>
+                  Plan ahead with precise and reliable weather forecasts for
+                  the next five days.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+              <div class="service-item position-relative">
+                <div class="icon"><i class="bi bi-bar-chart-line"></i></div>
+                <h4>
+                  <a href="" class="stretched-link">Historic Weather Data Analysis</a>
+                </h4>
+                <p>
+                  Analyze long-term weather trends using interactive graphs
+                  for better insights.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+              <div class="service-item position-relative">
+                <div class="icon"><i class="bi bi-map"></i></div>
+                <h4>
+                  <a href="" class="stretched-link">Interactive Weather Maps</a>
+                </h4>
+                <p>
+                  Explore current weather patterns with dynamic and
+                  interactive weather maps.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="500">
+              <div class="service-item position-relative">
+                <div class="icon"><i class="bi bi-bell"></i></div>
+                <h4>
+                  <a href="" class="stretched-link">Raster Data Visualization</a>
+                </h4>
+                <p>
+                  Analyze spatial patterns with high-resolution raster data layers on the map,
+                  including temperature and rainfall.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="600">
+              <div class="service-item position-relative">
+                <div class="icon"><i class="bi bi-newspaper"></i></div>
+                <h4>
+                  <a href="" class="stretched-link">Weather News & Updates</a>
+                </h4>
+                <p>
+                  Stay updated with the latest weather-related news and global
+                  climate events.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Services Section -->
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Contact</h2>
+          <p>
+            Have questions or need assistance? Get in touch with us for inquiries about our raster data visualization,
+            weather analysis, and mapping solutions.
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4">
+            <div class="col-lg-5">
+              <div class="info-wrap">
+                <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                  <i class="bi bi-geo-alt flex-shrink-0"></i>
+                  <div>
+                    <h3>Address</h3>
+                    <p>Unit-16, Bhubaneswar, Odisha</p>
+                  </div>
+                </div>
+                <!-- End Info Item -->
+
+                <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                  <i class="bi bi-telephone flex-shrink-0"></i>
+                  <div>
+                    <h3>Call Us</h3>
+                    <p>7978961272</p>
+                  </div>
+                </div>
+                <!-- End Info Item -->
+
+                <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                  <i class="bi bi-envelope flex-shrink-0"></i>
+                  <div>
+                    <h3>Email Us</h3>
+                    <p>pradhansamaresh2002@gmail.com</p>
+                  </div>
+                </div>
+                <!-- End Info Item -->
+
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.138421446149!2d85.8112116!3d20.3079468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909b1bfffffff%3A0xd38745b6e9c683c2!2sODISHA%20SPACE%20APPLICATIONS%20CENTRE%20(ORSAC)!5e1!3m2!1sen!2sin!4v1739172397640!5m2!1sen!2sin"
+                  width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+
+            <div class="col-lg-7">
+              <form class="php-email-form c_form" data-aos="fade-up" data-aos-delay="200">
+                <div class="row gy-4">
+                  <div class="col-md-6">
+                    <label for="name-field" class="pb-2">Your Name</label>
+                    <input type="text" name="name" id="name-field" class="form-control" />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="email-field" class="pb-2">Your Email</label>
+                    <input type="email" class="form-control" name="email" id="email-field" />
+                  </div>
+
+                  <div class="col-md-12">
+                    <label for="subject-field" class="pb-2">Subject</label>
+                    <input type="text" class="form-control" name="subject" id="subject-field" />
+                  </div>
+
+                  <div class="col-md-12">
+                    <label for="message-field" class="pb-2">Message</label>
+                    <textarea class="form-control" name="message" rows="10" id="message-field"></textarea>
+                  </div>
+
+                  <div class="col-md-12 text-center">
+                    <!-- <div class="loading">Loading</div> -->
+                    <!-- <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div> -->
+
+                    <button type="submit" class="send">Send Message</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- End Contact Form -->
+          </div>
+        </div>
+      </section>
+      <!-- /Contact Section -->
+    </main>
+
+    <footer id="footer" class="footer dark-background">
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="landing.html" class="logo d-flex align-items-center">
+              <span class="sitename">WeatherSphere</span><br>
+
+            </a>
+            <p>Get real-time weather updates, 5-day forecasts, and in-depth historical data analytics with stunning
+              visualizations and raster-based insights."</p>
+            <!-- <div class="footer-contact pt-3">
+            <p>A108 Adam Street</p>
+            <p>New York, NY 535022</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+            <p><strong>Email:</strong> <span>info@example.com</span></p>
+          </div> -->
+            <div class="social-links d-flex mt-4">
+              <a href="https://x.com/samaresh19653"><i class="bi bi-twitter-x"></i></a>
+              <a href="https://www.facebook.com/samaresh.pradhan.549"><i class="bi bi-facebook"></i></a>
+              <a href="https://www.instagram.com/samaresh_pradhan/"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/samaresh-pradhan/"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="logo-wrapper text-center my-4">
+            <div class="logo-glow-ring">
+              <img src="assets/img/llllllll.png" alt="LOGO" class="ft-img animate-logo">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>Copyright</span>
+          <strong class="px-1 sitename">WeatherSphere</strong>
+          <span>All Rights Reserved</span>
+        </p>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          Designed by Samaresh Pradhan
+        </div>
+      </div>
+    </footer>
+    <!-- LOGIN & SIGNUP MODAL-->
+    <!-- Login Modal -->
+    <div class="modal fade" id="exampleModalToggle" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <!-- <h2 class="modal-title" id="signupModalLabel">Login</h2> -->
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body position-relative">
+            <!-- Custom Close Button -->
+            <!-- <i class="bi bi-x-circle close-icon" id="close-icon" data-bs-dismiss="modal"></i> -->
+
+            <!-- Login Form -->
+            <div class="login_container">
+              <h2>Login</h2>
+              <form action="">
+                <label for="email">Email</label>
+                <input type="email" id="userEmailLogin" name="email" placeholder="Enter your email" required />
+                <label for="password">Password</label>
+                <input type="password" id="userPasswordLogin" name="password" placeholder="Enter your password"
+                  required />
+                <button type="submit" class="submit btnnn" id="loginBtn">
+                  Login
+                </button>
+              </form>
+              <div class="links">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#signupModal">New here? Sign up</a>
+                <a href="foregot.html">Forget Password?</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGNUP -->
+    <!-- Signup Modal -->
+    <div class="modal fade" id="signupModal" aria-labelledby="signupModalLabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h2 class="modal-title" id="signupModalLabel">Signup</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="signup_container">
+              <form class="signup_form" id="signupForm">
+                <h2>Signup</h2>
+                <div class="signup_group">
+                  <div>
+                    <label for="user_mail" class="signup_label">Email :</label>
+                    <input type="email" id="user_mail" class="email" placeholder="Enter your email" />
+                    <span id="emailerror"></span>
+                  </div>
+                  <div>
+                    <label for="user_name" class="signup_label">Name :</label>
+                    <input type="text" id="user_name" class="name" placeholder="Enter your Name" />
+                    <span id="nameerror"></span>
+                  </div>
+                  <div>
+                    <label for="user_mobile_no" class="signup_label">Number :</label>
+                    <input type="text" id="user_mobile_no" class="number" placeholder="Enter your number" />
+                    <span id="numerror"></span>
+                  </div>
+                  <div>
+                    <label for="userPassword" class="signup_label">Password :</label>
+                    <input type="password" id="userPassword" class="password" placeholder="Enter your password" />
+                    <span id="passerror"></span>
+                  </div>
+                  <div>
+                    <label for="confirmPassword" class="signup_label">Confirm Password :</label>
+                    <input type="password" id="confirmPassword" class="C_password" placeholder="Confirm password" />
+                    <span id="Cpasserror"></span>
+                  </div>
+                  <div>
+                    <label for="captchaInput" class="signup_label">Captcha :</label>
+                    <div class="captcha" id="captchaDisplay">cvbn</div>
+                    <div style="display: flex">
+                      <input type="text" placeholder="Enter captcha" class="captcha_input" id="captchaInput" />
+                      <button type="button" class="refresh" id="refreshCaptcha">
+                        <i class="bi bi-arrow-clockwise"></i>
+                      </button>
+                    </div>
+                    <span id="captchaerror"></span>
+                  </div>
+                </div>
+                <button type="submit" class="submit" id="signupSubmitbtn">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+  </div>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- <script src="./assets/js/jquery-3.7.1.min.js"></script> -->
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+  <!-- Main JS File -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="./assets/js/jquery-3.7.1.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.1.0/dist/purecounter_vanilla.js"></script>
+  <script src="assets/js/landing.js"></script>
+  <script src="./assets/js/modal.js"></script>
+  <script src="./assets/js/login.js"></script>
+  <script src="./assets/js/signup.js"></script>
+  <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+</body>
+
+</html>

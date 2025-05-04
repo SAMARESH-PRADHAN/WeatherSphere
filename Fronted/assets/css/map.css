@@ -1,0 +1,548 @@
+.mnmn {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 95vh;
+  display: flex;
+  
+  flex-direction: column;
+  background-color: #121212;
+  color: #ffffff;
+  font-family: "Arial", sans-serif;
+  overflow: hidden;
+  z-index: 0;
+}
+#header{
+  z-index: 1;
+}
+#map {
+  width: 100%;
+  flex: 1;
+  height: 80vh;
+  position: relative;
+  z-index: 0;
+}
+
+#search-container {
+  width: 320px;
+  height: 60px;
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #3f3e3e;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px gray;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#searchCity {
+  width: 70%;
+  height: 30px;
+  outline: none;
+  border: none;
+  font-size: 15px;
+  background: #3f3e3e;
+  color: white;
+}
+
+#srch-btn {
+  width: 70px;
+  height: 35px;
+  border: none;
+  background: none;
+  border-radius: 5px;
+  background-color: rgb(129, 245, 116);
+  margin-bottom: 3px;
+  margin-left: 20px;
+}
+
+#toggleControls {
+  position: absolute;
+  top: 90px;
+  right: 10px;
+  z-index: 0;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 10px;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#options-menu.show {
+  right: 10px;
+}
+
+#toggleControls:hover {
+  transform: scale(1.1);
+}
+
+#controls {
+  position: fixed;
+  top: 130px;
+  right: 10px;
+  z-index: 0;
+  background: rgba(81, 79, 79, 0.95);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  display: none;
+
+  transition: all 0.5s ease-in-out;
+}
+
+#chartContainer {
+  display: none;
+  position: absolute;
+  bottom: 80px;
+  left: 20px;
+  width: 400px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.95);
+  color: rgb(10, 10, 10);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000;
+  transition: all 0.6s ease-in-out;
+}
+
+
+
+.fullscreen {
+  width: 90% !important;
+  height: 98vh !important;
+  position: fixed !important;
+  top: 1% !important;
+  left: 5% !important;
+ 
+  z-index: 1001 !important;
+  background: white !important;
+  padding: 10px !important;
+}
+
+#weatherContainer {
+  display: none;
+  width: 300px;
+  position: absolute;
+  top: 215px;
+  left: 10px;
+  background: rgba(81, 79, 79, 0.95);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000;
+  transition: all 0.6s ease-in-out;
+}
+
+#weatherContainer h3 {
+  font-size: 20px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+
+  color: rgb(252, 6, 6);
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Styling for the new Settings Panel */
+#settingsPanel {
+  position: absolute;
+  top: 130px;
+  left: -250px;
+  background: rgba(81, 79, 79, 0.95);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  width: 220px;
+  color: white;
+  opacity: 0;
+  visibility: hidden;
+  transition: left 0.4s ease-in-out, opacity 0.4s ease-in-out,
+    visibility 0.4s ease-in-out;
+}
+
+/* Class to Show Panel */
+#settingsPanel.show {
+  left: 10px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Styled Toggle Button */
+#toggleSettings {
+  position: absolute;
+  top: 90px;
+  left: 10px;
+  z-index: 0;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 10px 15px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#toggleSettings:hover {
+  transform: scale(1.1);
+}
+
+/* Styled Dropdown for Map Selection */
+#mapType {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background: #f8f9fa;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+#mapType:hover {
+  background: #e2e6ea;
+}
+
+/* Custom Checkbox Styles */
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px 0;
+}
+
+.custom-checkbox input {
+  display: none;
+}
+
+.custom-checkbox .checkmark {
+  width: 20px;
+  height: 20px;
+  background: #ccc;
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 10px;
+  transition: all 0.3s;
+}
+
+.custom-checkbox input:checked+.checkmark {
+  background: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.7);
+}
+
+/* ===== Latitude & Longitude Display (Bottom Center) ===== */
+.mousePosition {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(169, 164, 164, 0.7);
+  color: rgb(8, 8, 8);
+  padding: 2px 5px;
+  border-radius: 8px;
+  font-size: 14px;
+
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+
+/* ===== Stylish Scale Bar ===== */
+.leaflet-control-scale {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 6px 2px;
+  border-radius: 3px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.sys {
+  margin-left: 20px;
+  font-size: 25px;
+}
+
+.spinner-container {
+  display: none;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.bd {
+  background: linear-gradient(45deg, #ff5733, #ffbd69);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.bd:hover {
+  background: linear-gradient(45deg, #ff4500, #ffa500);
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.bd:active {
+  transform: scale(0.95);
+}
+
+#datePreset {
+  background-color: rgba(169, 164, 164, 0.7);
+  color: white;
+  border: 1px solid #444;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#datePreset:hover {
+  background-color: #857e7e;
+}
+
+#start_date,
+#end_date {
+  background-color: rgba(169, 164, 164, 0.7);
+  color: white;
+  border: 1px solid #444;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#start_date:hover,
+#end_date:hover {
+  background-color: #857e7e;
+
+}
+
+#ft {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+#legend-container {
+  position: absolute;
+  bottom: 80px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  display: rgb(15, 15, 15) !important;
+  /* Ensure legend is visible when map loads */
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+  visibility: hidden;
+}
+
+#legend-container img {
+  width: 100px;
+  height: 200px;
+  /* Ensure the image scales correctly */
+}
+
+#legend-container h6 {
+  color: black;
+  align-items: center;
+}
+
+
+
+/* Custom Dropdown Styling */
+.scrollable-dropdown {
+  max-height: 250px;
+  overflow-y: auto;
+  /* Enable scrolling */
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+/* Custom Scrollbar for Better Look */
+.scrollable-dropdown::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollable-dropdown::-webkit-scrollbar-thumb {
+  background: #007bff;
+  border-radius: 10px;
+}
+
+.scrollable-dropdown::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Smooth Open & Close Animation */
+.dropdown-menu li {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-menu input[type="checkbox"] {
+  margin-right: 8px;
+}
+.ftter{
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+#header {
+  position: fixed;
+  top: 0;
+  /* left: 0; */
+  width: 100%;
+  z-index: 1000;
+}
+main{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+}
+/* Buttons */
+.styled-button {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 9px 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin: 3px;
+}
+.styled-button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #764ba2, #667eea);
+}
+/* ========= Mobile (up to 480px) ========= */
+@media (max-width: 480px) {
+  #chartContainer {
+    width: 95vw !important;
+    height: 60vh !important;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #weatherContainer,
+  #settingsPanel,
+  #controls {
+    width: 90vw;
+    left: 5vw !important;
+    top: 160px;
+    right: auto;
+  }
+
+  #search-container {
+    width: 90vw;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #searchCity {
+    width: 60%;
+    font-size: 14px;
+  }
+
+  #srch-btn {
+    width: 60px;
+    margin-left: 10px;
+  }
+
+  #toggleControls,
+  #toggleSettings {
+    font-size: 12px;
+    padding: 8px 10px;
+    top: 120px;
+  }
+
+  .sys {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+  #legend-container{
+    bottom: 10px;
+  }
+  #legend-container img {
+    width: 70px;
+    height: auto;
+  }
+}
+
+/* ========= Tablet (481px to 768px) ========= */
+@media (min-width: 481px) and (max-width: 768px) {
+  #chartContainer {
+    width: 80vw !important;
+    height: 55vh !important;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #search-container {
+    width: 80vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #searchCity {
+    width: 65%;
+  }
+
+  #srch-btn {
+    width: 65px;
+  }
+
+  #weatherContainer,
+  #settingsPanel,
+  #controls {
+    width: 80vw;
+    left: 10vw !important;
+    right: auto;
+  }
+}

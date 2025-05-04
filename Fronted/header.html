@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./assets/js/jquery-3.7.1.min.js"></script>
+  <!--=============== REMIXICONS ===============-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+
+  <!--=============== CSS ===============-->
+  <link rel="stylesheet" href="assets/css/header.css">
+
+  <title>Header</title>
+
+</head>
+
+<body>
+  <!--==================== HEADER ====================-->
+  <header class="hd" id="hd">
+    <nav class="nav contar">
+      <div class="logo-containe">
+        <img src="assets/img/llllllll.png" alt="Logo" class="h_logo">
+        <canvas id="particles-canvas"></canvas>
+      </div>
+
+
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">Home</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="analysis.html" class="nav__link">Analysis</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="map.html" class="nav__link">Map View</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="news.html" class="nav__link">News</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="feedback.html" class="nav__link">Feedback</a>
+          </li>
+        </ul>
+
+        <!-- Close button -->
+        <div class="nav__close" id="nav-close">
+          <i class="ri-close-line"></i>
+        </div>
+      </div>
+
+      <div class="nav__actions">
+
+        <!-- Login button -->
+        <i class="ri-user-line nav__login ic" id="profile-btn"></i>
+        <!-- <i class="ri-profile-line nav_login login-btn2" id="profile-btn"></i> -->
+
+        <!-- Toggle button -->
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-menu-line"></i>
+        </div>
+        <!--==================== wraper ====================-->
+        <div class="sub-menu-wrap open-menu" id="subAdmin" style="display: none;">
+          <div class="sub-menu">
+            <div class="user-info">
+              <h2 id="h_head">
+                SAMARESH
+              </h2>
+            </div>
+            <hr>
+            <a href="dashboard.html" class="sub-menu-link">
+              <i class="ri-dashboard-fill i_image"></i>
+              <p>Dashboard</p>
+              <span><i class="ri-arrow-right-s-line"></i></span>
+            </a>
+            <a href="userManagmentTable.html" class="sub-menu-link">
+              <i class="ri-folder-user-fill i_image"></i>
+              <p>User details</p>
+              <span><i class="ri-arrow-right-s-line"></i></span>
+            </a>
+            <a href="notification.html" class="sub-menu-link">
+              <i class="ri-notification-3-fill i_image"></i>
+              <p>Notification</p>
+              <span><i class="ri-arrow-right-s-line"></i></span>
+            </a>
+            <a href="#" class="sub-menu-link logout-link">
+              <i class="ri-logout-box-r-fill i_image"></i>
+              <p>Log out</p>
+              <span><i class="ri-arrow-right-s-line"></i></span>
+            </a>
+          </div>
+        </div>
+        <div class="sub-user-wrap open-user" id="subUser" style="display: none;">
+          <div class="sub-menu">
+            <div class="user-info">
+              <h2 id="h_head">
+                Barsha
+              </h2>
+            </div>
+            <hr>
+            <a href="#" class="sub-menu-link logout-link">
+              <i class="ri-logout-box-r-fill i_image"></i>
+              <p>Log out</p>
+              <span><i class="ri-arrow-right-s-line"></i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </nav>
+  </header>
+
+
+
+  <!--==================== MAIN ====================-->
+  <!-- <main class="main">
+    <img src="assets/img/bg-image.png" alt="image" class="main__bg">
+  </main> -->
+
+  <!--=============== MAIN JS ===============-->
+
+  <script src="./assets/js/jquery-3.7.1.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="assets/js/header.js"></script>
+
+</body>
+
+</html>

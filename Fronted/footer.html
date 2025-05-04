@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footer</title>
+  <script src="./assets/js/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/index.css">
+  <style>
+    .colophon {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .site-footer {
+      background: #1e1e1e;
+      padding: 40px 0;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .foot h3 {
+      font-size: 2.2rem;
+      margin-left: 10px;
+      color: #ffcc00;
+      position: relative;
+      font-weight: 700;
+      text-shadow: 0 0 2px #ffcc00, 0 0 6px #ffcc00;
+      transition: text-shadow 0.3s ease-in-out;
+    }
+
+    .foot h3:hover {
+      text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+    }
+
+    .foot h3::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -5px;
+      width: 0;
+      height: 3px;
+      background: #ffcc00;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .foot h3:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    .foot p {
+      font-style: italic;
+      color: #bbb;
+      animation: shimmer 3s infinite;
+    }
+
+    .social-links a {
+      font-size: 1.5rem;
+      margin: 0 10px;
+      color: #ccc;
+      transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #00ffff;
+      transform: scale(1.2);
+      text-shadow: 0 0 8px #00ffff;
+    }
+
+    .colophon {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: #888;
+      animation: fadeIn 2s ease-in;
+    }
+
+    /* Animations */
+    @keyframes shimmer {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.7;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <!-- <form action="#" class="subscribe-form">
+            <input type="text" placeholder="Enter your email to subscribe...">
+            <input type="submit" value="Subscribe">
+          </form> -->
+          <div class="foot">
+            <h3>WeatherSphere </h3>
+            <p>A complete weather intelligence hub.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-md-offset-1">
+          <div class="social-links">
+            <a href="#"><i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="#"><i class="fa-brands fa-twitter"></i> </i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <p class="colophon">Copyright 2025 Samaresh. Designed by Samaresh Pradhan. All rights reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    $(window).on("scroll", function () {
+      $(".site-footer").each(function () {
+        if ($(this).offset().top < $(window).scrollTop() + $(window).height()) {
+          $(this).css("opacity", 1).addClass("animate__animated animate__fadeInUp");
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
